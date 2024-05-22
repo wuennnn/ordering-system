@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>確認訂單</title>
+</head>
+<body>
+    <h1>請確認您的訂單</h1>
+    <ul id="confirmedOrder"></ul>
+    <h2>總價格: <span id="confirmedTotalPrice">0</span> 元</h2>
+
+    <h2>備註</h2>
+    <textarea id="orderNotes" placeholder="輸入你的備註..."></textarea>
+    <button onclick="saveNotes()">保存備註</button>
+
+    <button onclick="goBack()">返回修改</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderItems = JSON.parse(localStorage.getItem('order'));
+            const totalPrice = localStorage.getItem('totalPrice');
+            const savedNotes = localStorage.getItem('notes') || '';
+
+            const confirmedOrder = document.getElementById('confirmedOrder');
+            const confirmedTotalPrice = document.getElementById('confirmedTotalPrice');
+            const orderNotes = document.getElementById('orderNotes');
+
+            orderItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item;
+                confirmedOrder.appendChild(listItem);
+            });
+
+            confirmedTotalPrice.textContent = totalPrice;
+            orderNotes.value = savedNotes;
+        });
+
+        function saveNotes() {
+            const notes = document.getElementById('orderNotes').value;
+            localStorage.setItem('notes', notes);
+        }
+
+        function goBack() {
+            saveNotes();  // Save notes before going back
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

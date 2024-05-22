@@ -1,0 +1,57 @@
+<!DOCTYPE html> <!--declaration for the HTML document -->
+<html lang="en"> <!--language:English-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點餐系統</title>
+    <link rel="stylesheet" href="style.css"> <!--rel:relationship-->
+                                             <!--href:hypertext reference-->
+</head>
+<body> <!--containing all the content displayed in the browser window-->
+    <h1>WELCOME TO 吃好</h1> <!-- level 1 heading-->
+    
+    <button onclick="showHome()">Home</button>
+    <button onclick="showCategoryMenu()">分類</button>
+    <input type="text" id="searchBox" placeholder="搜尋食物" oninput="searchMenu()">
+    
+    <div id="homeScreen">
+        <h2>主畫面</h2>
+        <h2>菜單</h2>
+        <ul id="homeMenu">
+            <li data-name="漢堡" data-price="50" data-category="主食">漢堡 - $50</li>
+            <li data-name="披薩" data-price="100" data-category="主食">披薩 - $100</li>
+            <li data-name="沙拉" data-price="80" data-category="輕食">沙拉 - $80</li>
+            <li data-name="可樂" data-price="30" data-category="飲料">可樂 - $30</li>
+            <li data-name="果汁" data-price="40" data-category="飲料">果汁 - $40</li>
+        </ul>
+    </div>
+
+    <div id="categoryMenu">
+        <h2>分類菜單</h2>
+        <button onclick="showCategory('主食')">主食</button>
+        <button onclick="showCategory('輕食')">輕食</button>
+        <button onclick="showCategory('飲料')">飲料</button>
+        <ul id="menu">
+            <li data-name="漢堡" data-price="50" data-category="主食">漢堡 - $50</li>
+            <li data-name="披薩" data-price="100" data-category="主食">披薩 - $100</li>
+            <li data-name="沙拉" data-price="80" data-category="輕食">沙拉 - $80</li>
+            <li data-name="可樂" data-price="30" data-category="飲料">可樂 - $30</li>
+            <li data-name="果汁" data-price="40" data-category="飲料">果汁 - $40</li>
+        </ul>
+    </div>
+
+   
+
+    <h2>你的訂單</h2>
+    <ul id="order"></ul>
+
+    <h2>總價格: <span id="totalPrice">0</span> 元</h2>
+
+    <button onclick="checkout()">結帳</button>
+
+
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
