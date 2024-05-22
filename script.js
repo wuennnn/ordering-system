@@ -84,11 +84,13 @@
         function showHome() {
             document.getElementById('homeScreen').style.display = 'block';
             document.getElementById('categoryMenu').style.display = 'none';
+            document.getElementById('foodMenu').style.display = 'none';
         }
 
         function showCategoryMenu() {
             document.getElementById('homeScreen').style.display = 'none';
             document.getElementById('categoryMenu').style.display = 'block';
+            document.getElementById('foodMenu').style.display = 'none';
         }
 
         function showCategory(category) {
@@ -101,6 +103,8 @@
                     item.style.display = 'none';
                 }
             });
+            document.getElementById('foodMenu').style.display = 'block';
+            document.getElementById('categoryMenu').style.display = 'none';
         }
 
         function searchMenu() {
