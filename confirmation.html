@@ -15,6 +15,7 @@
     <button onclick="saveNotes()">保存備註</button>
 
     <button onclick="goBack()">返回修改</button>
+    <button onclick="confirmOrder()">確認</button>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -43,6 +44,15 @@
 
         function goBack() {
             saveNotes();  // Save notes before going back
+            window.location.href = 'index.html';
+        }
+
+        function confirmOrder() {
+            // 清除訂單和總價格
+            localStorage.removeItem('order');
+            localStorage.removeItem('totalPrice');
+            localStorage.removeItem('notes');
+            alert('訂單已確認，謝謝您的購買！');
             window.location.href = 'index.html';
         }
     </script>

@@ -18,25 +18,78 @@
         <h2>主畫面</h2>
         <h2>菜單</h2>
         <ul id="homeMenu">
-            <li data-name="漢堡" data-price="50" data-category="主食">漢堡 - $50</li>
-            <li data-name="披薩" data-price="100" data-category="主食">披薩 - $100</li>
-            <li data-name="沙拉" data-price="80" data-category="輕食">沙拉 - $80</li>
-            <li data-name="可樂" data-price="30" data-category="飲料">可樂 - $30</li>
-            <li data-name="果汁" data-price="40" data-category="飲料">果汁 - $40</li>
+            <li data-name="原味蛋餅" data-price="30" data-category="台式蛋餅">原味蛋餅 - $30</li>
+            <li data-name="玉米蛋餅" data-price="40" data-category="台式蛋餅">玉米蛋餅 - $40</li>
+            <li data-name="蔬菜蛋餅" data-price="40" data-category="台式蛋餅">蔬菜蛋餅 - $40</li>
+            <li data-name="肉鬆蛋餅" data-price="40" data-category="台式蛋餅">肉鬆蛋餅 - $40</li>
+            <li data-name="培根蛋餅" data-price="45" data-category="台式蛋餅">培根蛋餅 - $45</li>
+
+            <li data-name="香濃起士堡" data-price="50" data-category="漢堡">香濃起士堡 - $50</li>
+            <li data-name="雙層鱈魚堡" data-price="55" data-category="漢堡">雙層鱈魚堡 - $55</li>
+            <li data-name="蕈菇青蔬堡" data-price="55" data-category="漢堡">蕈菇青蔬堡 - $55</li>
+            <li data-name="椒鹽雞塊堡" data-price="55" data-category="漢堡">椒鹽雞塊堡 - $55</li>
+            <li data-name="優良好寶堡" data-price="55" data-category="漢堡">優良好寶堡 - $55</li>
+            
+            <li data-name="薯餅" data-price="20" data-category="小點">薯餅 - $20</li>
+            <li data-name="波浪薯條" data-price="35" data-category="小點">波浪薯條 - $35</li>
+            <li data-name="美式厚薯" data-price="40" data-category="小點">美式厚薯 - $40</li>
+            <li data-name="麥克雞塊" data-price="35" data-category="小點">麥克雞塊 - $35</li>
+
+            <li data-name="醇濃巧克力鬆餅" data-price="35" data-category="鬆餅">醇濃巧克力鬆餅 - $35</li>
+            <li data-name="奶油蜂蜜鬆餅" data-price="35" data-category="鬆餅">奶油蜂蜜鬆餅 - $35</li>
+            <li data-name="脆粒花生鬆餅" data-price="35" data-category="鬆餅">脆粒花生鬆餅 - $35</li>
+            <li data-name="抹茶奶酥鬆餅" data-price="40" data-category="鬆餅">抹茶奶酥鬆餅 - $40</li>
+
+            <li data-name="伯爵紅茶" data-price="25" data-category="飲料">伯爵紅茶 - $25</li>
+            <li data-name="茉莉綠茶" data-price="25" data-category="飲料">茉莉綠茶 - $25</li>
+            <li data-name="一把青茶" data-price="30" data-category="飲料">一把青茶 - $30</li>
+            <li data-name="貴妃那堤" data-price="30" data-category="飲料">貴妃那堤 - $30</li>
+
+            <li data-name="可可好朋友" data-price="40" data-category="特調飲品">可可好朋友 - $40</li>
+            <li data-name="蕉蕉好朋友" data-price="40" data-category="特調飲品">蕉蕉好朋友 - $40</li>
+            <li data-name="莓有好朋友" data-price="40" data-category="特調飲品">莓有好朋友 - $40</li>
         </ul>
     </div>
 
     <div id="categoryMenu">
         <h2>分類菜單</h2>
-        <button onclick="showCategory('主食')">主食</button>
-        <button onclick="showCategory('輕食')">輕食</button>
+        <button onclick="showCategory('台式蛋餅')">台式蛋餅</button>
+        <button onclick="showCategory('漢堡')">漢堡</button>
+        <button onclick="showCategory('小點')">小點</button>
+        <button onclick="showCategory('鬆餅')">鬆餅</button>
         <button onclick="showCategory('飲料')">飲料</button>
+        <button onclick="showCategory('特調飲品')">特調飲品</button>
         <ul id="menu">
-            <li data-name="漢堡" data-price="50" data-category="主食">漢堡 - $50</li>
-            <li data-name="披薩" data-price="100" data-category="主食">披薩 - $100</li>
-            <li data-name="沙拉" data-price="80" data-category="輕食">沙拉 - $80</li>
-            <li data-name="可樂" data-price="30" data-category="飲料">可樂 - $30</li>
-            <li data-name="果汁" data-price="40" data-category="飲料">果汁 - $40</li>
+            <li data-name="原味蛋餅" data-price="30" data-category="台式蛋餅">原味蛋餅 - $30</li>
+            <li data-name="玉米蛋餅" data-price="40" data-category="台式蛋餅">玉米蛋餅 - $40</li>
+            <li data-name="蔬菜蛋餅" data-price="40" data-category="台式蛋餅">蔬菜蛋餅 - $40</li>
+            <li data-name="肉鬆蛋餅" data-price="40" data-category="台式蛋餅">肉鬆蛋餅 - $40</li>
+            <li data-name="培根蛋餅" data-price="45" data-category="台式蛋餅">培根蛋餅 - $45</li>
+
+            <li data-name="香濃起士堡" data-price="50" data-category="漢堡">香濃起士堡 - $50</li>
+            <li data-name="雙層鱈魚堡" data-price="55" data-category="漢堡">雙層鱈魚堡 - $55</li>
+            <li data-name="蕈菇青蔬堡" data-price="55" data-category="漢堡">蕈菇青蔬堡 - $55</li>
+            <li data-name="椒鹽雞塊堡" data-price="55" data-category="漢堡">椒鹽雞塊堡 - $55</li>
+            <li data-name="優良好寶堡" data-price="55" data-category="漢堡">優良好寶堡 - $55</li>
+            
+            <li data-name="薯餅" data-price="20" data-category="小點">薯餅 - $20</li>
+            <li data-name="波浪薯條" data-price="35" data-category="小點">波浪薯條 - $35</li>
+            <li data-name="美式厚薯" data-price="40" data-category="小點">美式厚薯 - $40</li>
+            <li data-name="麥克雞塊" data-price="35" data-category="小點">麥克雞塊 - $35</li>
+
+            <li data-name="醇濃巧克力鬆餅" data-price="35" data-category="鬆餅">醇濃巧克力鬆餅 - $35</li>
+            <li data-name="奶油蜂蜜鬆餅" data-price="35" data-category="鬆餅">奶油蜂蜜鬆餅 - $35</li>
+            <li data-name="脆粒花生鬆餅" data-price="35" data-category="鬆餅">脆粒花生鬆餅 - $35</li>
+            <li data-name="抹茶奶酥鬆餅" data-price="40" data-category="鬆餅">抹茶奶酥鬆餅 - $40</li>
+
+            <li data-name="伯爵紅茶" data-price="25" data-category="飲料">伯爵紅茶 - $25</li>
+            <li data-name="茉莉綠茶" data-price="25" data-category="飲料">茉莉綠茶 - $25</li>
+            <li data-name="一把青茶" data-price="30" data-category="飲料">一把青茶 - $30</li>
+            <li data-name="貴妃那堤" data-price="30" data-category="飲料">貴妃那堤 - $30</li>
+
+            <li data-name="可可好朋友" data-price="40" data-category="特調飲品">可可好朋友 - $40</li>
+            <li data-name="蕉蕉好朋友" data-price="40" data-category="特調飲品">蕉蕉好朋友 - $40</li>
+            <li data-name="莓有好朋友" data-price="40" data-category="特調飲品">莓有好朋友 - $40</li>
         </ul>
     </div>
 
