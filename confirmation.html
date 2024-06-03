@@ -4,55 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>確認訂單</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>請確認您的訂單</h1>
-    <ul id="confirmedOrder"></ul>
-    <h2>總價格: <span id="confirmedTotalPrice">0</span> 元</h2>
+    <div class="container mt-4">
+        <h1 class="text-center text-pink">確認你的訂單</h1>
 
-    <h2>備註</h2>
-    <textarea id="orderNotes" placeholder="輸入你的備註..."></textarea>
-    <button onclick="saveNotes()">保存備註</button>
+        <h2 class="text-pink">你的訂單</h2>
+        <ul id="orderSummary" class="list-group mb-4"></ul>
 
-    <button onclick="goBack()">返回修改</button>
-    <button onclick="confirmOrder()">確認</button>
+        <h2 class="text-pink">總價格: NT$ <span id="totalPriceSummary">0</span></h2>
+
+        <h3>顧客信息</h3>
+        <p>名字: <span id="customerNameSummary"></span></p>
+        <p>電話: <span id="customerPhoneSummary"></span></p>
+
+        <div class="mb-3">
+            <label for="remarks" class="form-label">備註:</label>
+            <textarea id="remarks" class="form-control" rows="3"></textarea>
+        </div>
+
+        <button class="btn btn-pink" onclick="finalizeOrder()">確認訂單</button>
+        <button class="btn btn-secondary" onclick="goBack()">返回修改</button>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const orderItems = JSON.parse(localStorage.getItem('order'));
-            const totalPrice = localStorage.getItem('totalPrice');
-            const savedNotes = localStorage.getItem('notes') || '';
+            const orderSummary = document.getElementById('orderSummary');
+            const totalPriceSummary = document.getElementById('totalPriceSummary');
+            const remarks = document.getElementById('remarks');
+            const customerNameSummary = document.getElementById('customerNameSummary');
+            const customerPhoneSummary = document.getElementById('customerPhoneSummary');
 
-            const confirmedOrder = document.getElementById('confirmedOrder');
-            const confirmedTotalPrice = document.getElementById('confirmedTotalPrice');
-            const orderNotes = document.getElementById('orderNotes');
+            const savedOrder = JSON.parse(localStorage.getItem('order'));
+            const savedTotalPrice = localStorage.getItem('totalPrice');
+            const savedRemarks = localStorage.getItem('remarks');
+            const savedCustomerName = localStorage.getItem('customerName');
+            const savedCustomerPhone = localStorage.getItem('customerPhone');
 
-            orderItems.forEach(item => {
-                const listItem = document.createElement('li');
-                listItem.textContent = item;
-                confirmedOrder.appendChild(listItem);
-            });
+            if (savedOrder) {
+                savedOrder.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('list-group-item');
+                    listItem.textContent = item;
+                    orderSummary.appendChild(listItem);
+                });
 
-            confirmedTotalPrice.textContent = totalPrice;
-            orderNotes.value = savedNotes;
+                totalPriceSummary.textContent = savedTotalPrice;
+            }
+
+            if (savedRemarks) {
+                remarks.value = savedRemarks;
+            }
+
+            if (savedCustomerName) {
+                customerNameSummary.textContent = savedCustomerName;
+            }
+
+            if (savedCustomerPhone) {
+                customerPhoneSummary.textContent = savedCustomerPhone;
+            }
+        
         });
 
-        function saveNotes() {
-            const notes = document.getElementById('orderNotes').value;
-            localStorage.setItem('notes', notes);
+        function finalizeOrder() {
+            alert('你的訂單已確認。謝謝！');
+            localStorage.removeItem('order');
+            localStorage.removeItem('totalPrice');
+            localStorage.removeItem('remarks');
+            localStorage.removeItem('customerName');
+            localStorage.removeItem('customerPhone');
         }
 
         function goBack() {
-            saveNotes();  // Save notes before going back
-            window.location.href = 'index.html';
-        }
-
-        function confirmOrder() {
-            // 清除訂單和總價格
-            localStorage.removeItem('order');
-            localStorage.removeItem('totalPrice');
-            localStorage.removeItem('notes');
-            alert('訂單已確認，謝謝您的購買！');
+            const remarks = document.getElementById('remarks').value;
+            localStorage.setItem('remarks', remarks);
             window.location.href = 'index.html';
         }
     </script>
